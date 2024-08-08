@@ -1,0 +1,1 @@
+console.log("Ja sam Djemsi nista vise nista manje")

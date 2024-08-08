@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(91, 91, 242);
+}
+.ToDo{
+    width: 50%;
+    height: 70vh;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 10px;
+}
+.value{
+    width: 100%;
+    height: 15vh;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+input{
+    width: 70%;
+    height: 7vh;
+    background-color: white;
+    border: 3px solid rgb(91, 91, 242);
+    border-radius: 10px;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+#add-btn{
+    width: 15%;
+    height: 7vh;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+
+}
+
+ul{
+    width: 100%;
+    height: auto;
+}
+li{
+    width: 100%;
+    height: 5vh;
+    background-color: orange;
+    list-style: none;
+    margin-top: 5px;
+}
