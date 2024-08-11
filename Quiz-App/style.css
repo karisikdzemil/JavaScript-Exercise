@@ -14,8 +14,8 @@
     justify-content: center;
 }
 .quiz{
-    width: 60%;
-    min-height: 70vh;
+    width: 50%;
+    min-height: 60vh;
     background-color: white;
     border-radius: 10px;
     padding-bottom: 10px;
@@ -24,4 +24,66 @@ h1{
     font-size: 3rem;
     padding: 1rem;
     color: rgb(111, 180, 217);
+}
+#question{
+    background-color: rgba(37, 187, 247, 0.3);;
+    width: 100%;
+    height: 15vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid gray; */
+}
+h2, h3{
+    border-bottom: 2px solid rgb(91, 91, 242);
+    color: black;
+    font-weight: 500;
+}
+#answers{
+    width: 100%;
+    height: 55vh;
+    /* background-color: green; */
+    /* display: flex; */
+}
+.next-question{
+    width: 100%;
+    height: 10vh;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ul{
+    width: 100%;
+    height: 45vh;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+li{
+    width: 40%;
+    height: 8vh;
+    margin: 0 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: 2px solid rgb(91, 91, 242);
+    border-radius: 10px;
+    background-color: rgb(111, 141, 217);
+}
+
+#next{
+    width: 15%;
+    height: 7vh;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(91, 91, 242);
 }
