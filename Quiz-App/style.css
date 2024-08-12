@@ -77,10 +77,10 @@ li{
     border-radius: 10px;
     background-color: rgb(111, 141, 217);
 }
-/* li:hover{
+.li:hover{
     background-color: rgb(156, 181, 245);
     transition: 0.5s;
-} */
+}
 
 #next{
     width: 15%;

@@ -74,35 +74,29 @@ const backDrop = document.querySelector(".black-drop");
 const startModal = document.querySelector(".modal");
 const questionCounter = document.querySelector("h3");
 const ul = document.querySelector("ul");
-const firstLi = ul.children[0];
-const secondLi = ul.children[1];
-const thirdLi = ul.children[2];
-const fourthLi = ul.children[3];
-
+let randomIndex;
 let count = 1;
+let corectAnswers = 0;
+let isCalled = false;
+
+
+
 const nextQuestionHandler = () => {
-  let randomIndex = (Math.random() * 10).toFixed(0);
-  console.log(randomIndex);
+    if(count === 4){
+        console.log("gameover")
+    }
+  randomIndex = (Math.random() * 10).toFixed(0);
   question.textContent = quiz[randomIndex].question;
   for (let i = 0; i < 4; i++) {
     answers[i].textContent = quiz[randomIndex].wAnswers[i];
   }
   questionCounter.textContent = `${count}  of 4 questions`;
   count++;
-  const rightAnswer = quiz[randomIndex].cAnswer;
-  console.log(rightAnswer)
-  firstLi.addEventListener("click", () => {
-    checkAnswer(firstLi, rightAnswer);
-  });
-  secondLi.addEventListener("click", () => {
-    checkAnswer(secondLi, rightAnswer);
-  });
-  thirdLi.addEventListener("click", () => {
-    checkAnswer(thirdLi, rightAnswer);
-  });
-  fourthLi.addEventListener("click", () => {
-    checkAnswer(fourthLi, rightAnswer);
-  });
+  isCalled = false;
+
+for(const li of answers){
+  li.style.backgroundColor = "rgb(111, 141, 217)";
+}
 };
 
 startGameButton.addEventListener("click", () => {
@@ -111,14 +105,16 @@ startGameButton.addEventListener("click", () => {
   nextQuestionHandler();
 });
 
-const checkAnswer = (li, rAnsw) => {
-  if (li.textContent === rAnsw) {
-    li.classList.toggle("true");
-    // li.classList.toggle("li-hover");
-  } else {
-    li.classList.toggle("false");
-    // li.classList.toggle("li-hover");
+ul.addEventListener("click", (event)=>{
+  if(!isCalled){
+    if(event.target.textContent === quiz[randomIndex].cAnswer){
+        corectAnswers++;
+        event.target.style.backgroundColor = "green";
+    }else{
+        event.target.style.backgroundColor = "red";
+    }
+    isCalled = true;
   }
-};
+})
 
 nextQuestion.addEventListener("click", nextQuestionHandler);
