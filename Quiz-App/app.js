@@ -70,51 +70,78 @@ const question = document.querySelector("h2");
 const answers = document.querySelectorAll("li");
 const nextQuestion = document.getElementById("next");
 const startGameButton = document.getElementById("start-modal-but");
+const restartGameButton = document.getElementById("restart-modal-but");
 const backDrop = document.querySelector(".black-drop");
 const startModal = document.querySelector(".modal");
 const questionCounter = document.querySelector("h3");
 const ul = document.querySelector("ul");
+const gameOverModal = document.getElementById("game-over-modal");
 let randomIndex;
 let count = 1;
-let corectAnswers = 0;
+let correctAnswers = 0;
 let isCalled = false;
 
+const GameOver = () => {
+  gameOverModal.classList.remove("show");
+  gameOverModal.style.display = "none";
 
+  backDrop.style.display = "block";
+  backDrop.classList.remove("unvisible");
+  backDrop.classList.add("black-drop");
+  gameOverModal.classList.add("show");
+
+  gameOverModal.style.display = "flex";
+
+  const text = gameOverModal.querySelector("p");
+  text.textContent = `You got ${correctAnswers} correct out of 4 possible answers`;
+};
 
 const nextQuestionHandler = () => {
-    if(count === 4){
-        console.log("gameover")
-    }
-  randomIndex = (Math.random() * 10).toFixed(0);
+  if (count > 4) {
+    GameOver();
+    return;
+  }
+  randomIndex = Math.floor(Math.random() * quiz.length);
   question.textContent = quiz[randomIndex].question;
   for (let i = 0; i < 4; i++) {
     answers[i].textContent = quiz[randomIndex].wAnswers[i];
   }
-  questionCounter.textContent = `${count}  of 4 questions`;
+  questionCounter.textContent = `${count} of 4 questions`;
   count++;
   isCalled = false;
 
-for(const li of answers){
-  li.style.backgroundColor = "rgb(111, 141, 217)";
-}
+  for (const li of answers) {
+    li.style.backgroundColor = "rgb(111, 141, 217)";
+  }
 };
 
 startGameButton.addEventListener("click", () => {
-  backDrop.classList = "unvisible";
-  startModal.classList = "unvisible";
+  backDrop.classList.add("unvisible");
+  startModal.classList.add("unvisible");
+  count = 1;
+  correctAnswers = 0;
   nextQuestionHandler();
 });
 
-ul.addEventListener("click", (event)=>{
-  if(!isCalled){
-    if(event.target.textContent === quiz[randomIndex].cAnswer){
-        corectAnswers++;
-        event.target.style.backgroundColor = "green";
-    }else{
-        event.target.style.backgroundColor = "red";
+restartGameButton.addEventListener("click", () => {
+  backDrop.classList.add("unvisible");
+  backDrop.style.display = "none";
+  gameOverModal.style.display = "none";
+  count = 1;
+  correctAnswers = 0;
+  nextQuestionHandler();
+});
+
+ul.addEventListener("click", (event) => {
+  if (!isCalled && event.target.tagName === "LI") {
+    if (event.target.textContent === quiz[randomIndex].cAnswer) {
+      correctAnswers++;
+      event.target.style.backgroundColor = "green";
+    } else {
+      event.target.style.backgroundColor = "red";
     }
     isCalled = true;
   }
-})
+});
 
 nextQuestion.addEventListener("click", nextQuestionHandler);
