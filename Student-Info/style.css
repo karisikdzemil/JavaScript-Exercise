@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app{
+    width: 80%;
+    min-height: 80vh;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+header{
+    width: 100%;
+    height: 11vh;
+    background-color: rgb(128, 128, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 2rem;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+}
+input{
+    width: 70%;
+    height: 5vh;
+    padding: 5px;
+    font-size: 1rem;
+}
+#search-input-div{
+    width: 60%;
+    height: 11vh ;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#input-btn{
+    width: 15%;
+    height: 5vh;
+    background-color: blue;
+    color: white;
+    margin-left: 5px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+#NameApp{
+    color: white;
+    font-weight: 500;
+    font-size: 1.7rem;
+    padding: 10px;
+    border: 2px solid white;
+}
+.content{
+    width: 100%;
+    min-height: 65vh;
+    margin-top: 1rem;
+    background-color: red;
+}
