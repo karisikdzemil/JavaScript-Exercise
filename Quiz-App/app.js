@@ -101,6 +101,7 @@ const nextQuestionHandler = () => {
     GameOver();
     return;
   }
+
   randomIndex = Math.floor(Math.random() * quiz.length);
   question.textContent = quiz[randomIndex].question;
   for (let i = 0; i < 4; i++) {
