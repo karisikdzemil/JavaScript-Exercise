@@ -10,12 +10,26 @@
   </head>
   <body>
     <section class="main">
+      <div id="black-drop"></div>
+      <div id="add-student">
+        <h1>New Student</h1>
+        <label for="name">Name: <input id="name" class="enter-student" type="text" /></label>
+        <label for="surname">Surname: <input id="surname" class="enter-student" type="text" /></label>
+        <label for="index">Index: <input id="index" class="enter-student" type="text" /></label>
+        <label for="grades">Grades: <input id="grades" class="enter-student" type="text" /></label>
+        <label for="courses">Courses: <input id="courses" class="enter-student" type="text" /></label>
+        <label for="departments">Departments: <input id="departments" class="enter-student" type="text" /></label>
+        <button id="add-student-btn" class="input-btn">Submit</button>
+      </div>
       <div class="app">
         <header>
           <h1 id="NameApp">StudentInfo</h1>
           <div id="search-input-div">
-            <!-- <label for="Info">Search Student</label> -->
-            <input type="text" placeholder="Search Student...?" />
+            <input
+              id="search-input"
+              type="text"
+              placeholder="Search Student...?"
+            />
             <button id="input-btn-search" class="input-btn">Search</button>
             <button id="input-btn-add" class="input-btn">Add</button>
           </div>
@@ -23,9 +37,7 @@
             <h3>departmans</h3>
           </div>
         </header>
-
-        
-            <ul class="content"></ul>
+        <ul class="content"></ul>
       </div>
     </section>
   </body>

@@ -33,7 +33,7 @@ header{
     border-bottom: 1px solid black;
     border-radius: 5px;
 }
-input{
+#search-input{
     width: 70%;
     height: 5vh;
     padding: 5px;
@@ -94,3 +94,57 @@ li:hover{
     color: white;
     transition: 0.5s;
 }
+#black-drop{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: none;
+}
+
+#add-student {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 50%; 
+    position: absolute;
+    display: none;
+  }
+  #black-drop.visible{
+    display: block;
+} 
+#add-student.visible{
+    display: block;
+}
+  
+  #add-student h1 {
+    margin-bottom: 20px; 
+    font-size: 24px; 
+    color: #333; 
+  }
+  
+  #add-student label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%; 
+    font-size: 1rem; 
+    color: #555; 
+  }
+  
+  #add-student input {
+    margin-top: 5px; 
+    padding: 8px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    width: 100%; 
+  }
+  
+  #add-student input:focus {
+    border-color: #007bff; 
+    outline: none;
+  }

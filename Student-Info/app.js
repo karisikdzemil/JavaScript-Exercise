@@ -1,7 +1,13 @@
 const ul = document.querySelector("ul");
-const input = document.querySelector("input");
+const input = document.querySelector("#search-input");
 const searchBtn = document.getElementById("input-btn-search");
+const addBtn = document.getElementById("input-btn-add");
 const h1 = document.getElementById("NameApp");
+const blackDrop = document.getElementById("black-drop");
+const addStudent = document.getElementById("add-student");
+const addStudentBtn = document.getElementById("add-student-btn");
+const addStudentModal = document.getElementById("add-student");
+const inputs = addStudentModal.querySelectorAll("input");
 
 const renderItems = (renderArray = students) => {
   ul.innerHTML = "";
@@ -29,13 +35,25 @@ const searchStudentHandler = () => {
   if (filteredArr.length > 0) {
     ul.innerHTML = "";
     renderItems(filteredArr);
+    input.value = '';
   } else {
     alert("Student not found!!");
+    input.value = '';
   }
 };
 
+const addStudentHandler = () =>{
+    console.log(inputs[0].value);
+}
+console.log(addStudentModal);
 
 searchBtn.addEventListener("click", searchStudentHandler);
+addBtn.addEventListener("click", ()=>{
+    blackDrop.classList.toggle("visible");
+    addStudent.classList.toggle("visible");
+})
 h1.addEventListener("click", () => {
   renderItems(students);
 });
+addStudentBtn.addEventListener("click", addStudentHandler);
+
