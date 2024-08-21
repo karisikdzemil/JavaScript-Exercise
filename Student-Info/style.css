@@ -47,7 +47,7 @@ input{
     align-items: center;
     justify-content: center;
 }
-#input-btn{
+.input-btn{
     width: 15%;
     height: 5vh;
     background-color: blue;
@@ -77,12 +77,20 @@ input{
 li{
     width: 30%;
     height: 5vh;
-    background-color: rgb(128, 128, 255, 0.5);
+    /* background-color: rgb(128, 128, 255, 0.5); */
     margin: 7px;
     list-style: none;
+    border: 2px solid rgb(128, 128, 255);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 1rem;
     padding: 0 1rem;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+li:hover{
+    background-color: rgb(128, 128, 255, 0.5);
+    color: white;
+    transition: 0.5s;
 }
