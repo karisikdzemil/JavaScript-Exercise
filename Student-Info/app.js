@@ -1,8 +1,10 @@
 const ul = document.querySelector("ul");
 const input = document.querySelector("input");
 const searchBtn = document.getElementById("input-btn-search");
+const h1 = document.getElementById("NameApp");
 
-const renderItems = (renderArray) => {
+const renderItems = (renderArray = students) => {
+  ul.innerHTML = "";
   renderArray.map((element) => {
     const li = document.createElement("li");
     li.textContent = `${element.name} ${element.surname} -- Indeks: ${element.department}`;
@@ -11,7 +13,7 @@ const renderItems = (renderArray) => {
 };
 renderItems(students);
 
-searchBtn.addEventListener("click", () => {
+const searchStudentHandler = () => {
   const searchValue = input.value.toUpperCase().replace(/\s+/g, "");
   console.log(searchValue);
   const filteredArr = students.filter((el) => {
@@ -24,6 +26,16 @@ searchBtn.addEventListener("click", () => {
       return el;
     }
   });
-  ul.innerHTML = "";
-  renderItems(filteredArr);
+  if (filteredArr.length > 0) {
+    ul.innerHTML = "";
+    renderItems(filteredArr);
+  } else {
+    alert("Student not found!!");
+  }
+};
+
+
+searchBtn.addEventListener("click", searchStudentHandler);
+h1.addEventListener("click", () => {
+  renderItems(students);
 });
