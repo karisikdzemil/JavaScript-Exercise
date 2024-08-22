@@ -8,6 +8,7 @@ const addStudent = document.getElementById("add-student");
 const addStudentBtn = document.getElementById("add-student-btn");
 const addStudentModal = document.getElementById("add-student");
 const inputs = addStudentModal.querySelectorAll("input");
+const showStudentModal = document.getElementById("show-student");
 
 const renderItems = (renderArray = students) => {
   ul.innerHTML = "";
@@ -63,8 +64,16 @@ const addStudentHandler = () =>{
   }
     students.push(newStudent);
     renderItems(students);
+    inputs.forEach(el=> el.value = '');
     blackDrop.classList.toggle("visible");
     addStudent.classList.toggle("visible");
+}
+
+const showStudentHandler = (event) =>{
+
+  if(event.target.tagName !== "UL"){
+    console.log(event.target.textContent); 
+  }
 }
 
 searchBtn.addEventListener("click", searchStudentHandler);
@@ -77,3 +86,4 @@ h1.addEventListener("click", () => {
   renderItems(students);
 });
 
+ul.addEventListener("click", showStudentHandler);
