@@ -13,7 +13,11 @@ const renderItems = (renderArray = students) => {
   ul.innerHTML = "";
   renderArray.map((element) => {
     const li = document.createElement("li");
-    li.textContent = `${element.name} ${element.surname} -- Indeks: ${element.department}`;
+    const left = document.createElement("span");
+    const right = document.createElement("span");
+    left.textContent = `${element.name} ${element.surname} `
+    right.textContent = ` ${element.department}`;
+    li.append(left, right);
     ul.append(li);
   });
 };
@@ -43,11 +47,28 @@ const searchStudentHandler = () => {
 };
 
 const addStudentHandler = () =>{
-    console.log(inputs[0].value);
+  const studentCourses = [...inputs[4].value.split(",")];
+  const studentGrades = [...inputs[3].value.split(",")];
+  const coursesAndGrades = {}
+  studentCourses.forEach((el, index)=>{
+    coursesAndGrades[el] = studentGrades[index];
+  })
+  const newStudent = {
+    name: inputs[0].value,
+    surname: inputs[1].value,
+    index: inputs[2].value, 
+    grades: {...coursesAndGrades},
+    courses: studentCourses,
+    department: inputs[5].value
+  }
+    students.push(newStudent);
+    renderItems(students);
+    blackDrop.classList.toggle("visible");
+    addStudent.classList.toggle("visible");
 }
-console.log(addStudentModal);
 
 searchBtn.addEventListener("click", searchStudentHandler);
+addStudentBtn.addEventListener("click", addStudentHandler);
 addBtn.addEventListener("click", ()=>{
     blackDrop.classList.toggle("visible");
     addStudent.classList.toggle("visible");
@@ -55,5 +76,4 @@ addBtn.addEventListener("click", ()=>{
 h1.addEventListener("click", () => {
   renderItems(students);
 });
-addStudentBtn.addEventListener("click", addStudentHandler);
 
