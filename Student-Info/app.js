@@ -55,19 +55,30 @@ const addStudentHandler = () => {
   studentCourses.forEach((el, index) => {
     coursesAndGrades[el] = studentGrades[index];
   });
-  const newStudent = {
-    name: inputs[0].value,
-    surname: inputs[1].value,
-    index: inputs[2].value,
-    grades: { ...coursesAndGrades },
-    courses: studentCourses,
-    department: inputs[5].value,
-  };
-  students.push(newStudent);
-  renderItems(students);
-  inputs.forEach((el) => (el.value = ""));
-  blackDrop.classList.toggle("visible");
-  addStudent.classList.toggle("visible");
+  if (
+    inputs[0].value !== "" &&
+    inputs[1].value !== "" &&
+    inputs[2].value !== "" &&
+    inputs[3].value !== "" &&
+    inputs[4].value !== "" &&
+    inputs[5].value !== ""
+  ) {
+    const newStudent = {
+      name: inputs[0].value,
+      surname: inputs[1].value,
+      index: inputs[2].value,
+      grades: { ...coursesAndGrades },
+      courses: studentCourses,
+      department: inputs[5].value,
+    };
+    students.push(newStudent);
+    renderItems(students);
+    inputs.forEach((el) => (el.value = ""));
+    blackDrop.classList.toggle("visible");
+    addStudent.classList.toggle("visible");
+  } else {
+    alert("Invalid data, enter again!");
+  }
 };
 
 const showStudentHandler = (event) => {
@@ -77,7 +88,6 @@ const showStudentHandler = (event) => {
   const showCourses = showStudentModal.children[4];
   const showDepartment = showStudentModal.children[5];
   const showAverage = showStudentModal.children[6];
-  // console.log(showName, showIndex, showGrades, showCourses, showDepartment, showAverage);
 
   let clickedElement = event.target;
 
@@ -90,17 +100,27 @@ const showStudentHandler = (event) => {
     const showStudent = students.find(
       (el) => indexOfEl.trim() === el.index.trim()
     );
-    let entries = Object.entries(showStudent.grades).map(([key, value])=> `${key}: ${value}`);
+    let entries = Object.entries(showStudent.grades).map(
+      ([key, value]) => `${key}: ${value}`
+    );
+    let sum = Object.values(showStudent.grades).reduce(
+      (accumulator, currentValue) => {
+        let number = parseInt(currentValue);
+        return accumulator + number;
+      },
+      0
+    );
+    console.log(sum);
+    sum = sum / 3;
 
     showName.textContent = showStudent.name + " " + showStudent.surname;
     showIndex.textContent = showStudent.index;
     showGrades.textContent = entries.join(" ");
     showCourses.textContent = `${showStudent.courses[0]}, ${showStudent.courses[1]}, ${showStudent.courses[2]}`;
     showDepartment.textContent = showStudent.department;
-    // showIndex.textContent = ;
-
-    console.log(showStudent);
-    console.log(indexOfEl);
+    showAverage.textContent = sum.toFixed(2);
+    blackDrop.classList.toggle("visible");
+    showStudentModal.classList.toggle("visible");
   }
 };
 
@@ -113,6 +133,9 @@ addBtn.addEventListener("click", () => {
 h1.addEventListener("click", () => {
   renderItems(students);
 });
-closeShowBtn.addEventListener("click", showStudentHandler);
+closeShowBtn.addEventListener("click", () => {
+  blackDrop.classList.toggle("visible");
+  showStudentModal.classList.toggle("visible");
+});
 
 ul.addEventListener("click", showStudentHandler);
