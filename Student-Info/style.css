@@ -99,7 +99,7 @@ li:hover{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    /* display: none; */
+    display: none;
 }
 
 #add-student {
