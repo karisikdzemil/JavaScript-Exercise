@@ -20,6 +20,7 @@ header {
   align-items: center;
   justify-content: space-around;
   background-color: white;
+  border: 2px solid gray;
 }
 #shop-name{
     color: rgb(128, 128, 255);
@@ -45,6 +46,7 @@ input {
   border: 0;
   border-radius: 5px;
   border: 1px solid gray;
+  font-size: 1rem;
 }
 .btn {
   width: 15%;
@@ -77,6 +79,10 @@ input {
     align-items: center;
     justify-content: center;
 }
+.header-dropDown-li:hover{
+    background-color: rgb(128, 128, 255, 0.5);
+    transition: 0.5s;
+}
 #elements{
     width: 100%;
     min-height: 88vh;
@@ -96,7 +102,8 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border: 1px solid gray;
 }
 .card-img{
     width: 100%;
