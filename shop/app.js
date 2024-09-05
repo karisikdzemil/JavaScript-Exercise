@@ -12,3 +12,5 @@ function showCards(renderArray = shopItems){
     })
 }
 showCards();
+
+//demo project
