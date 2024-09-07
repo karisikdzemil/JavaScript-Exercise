@@ -1,4 +1,7 @@
 const elements = document.getElementById("elements");
+const input = document.getElementById("search-input").value;
+const searchInputBtn = document.getElementById("search-input-btn");
+showCards();
 
 function showCards(renderArray = shopItems){
     renderArray.map((el)=>{
@@ -11,6 +14,10 @@ function showCards(renderArray = shopItems){
             elements.append(li);
     })
 }
-showCards();
+const filterItemsHandler = () => {
+   
+    
 
-//demo project
+}
+
+searchInputBtn.addEventListener("click", filterItemsHandler);
