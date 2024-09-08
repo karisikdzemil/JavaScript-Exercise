@@ -1,5 +1,5 @@
 const elements = document.getElementById("elements");
-const input = document.getElementById("search-input").value;
+const input = document.getElementById("search-input");
 const searchInputBtn = document.getElementById("search-input-btn");
 showCards();
 
@@ -15,9 +15,15 @@ function showCards(renderArray = shopItems){
     })
 }
 const filterItemsHandler = () => {
-   
-    
-
+   const searchItem = input.value.toUpperCase().replace(/\s+/g, "");
+   console.log(searchItem);
+   const filteredArray = shopItems.filter((el) => {
+    if(searchItem === el.name.toUpperCase().replace(/\s+/g, "") || searchItem === el.category.toUpperCase().replace(/\s+/g, "")){
+        elements.innerHTML = '';
+        return el;
+    }
+   }) 
+   showCards(filteredArray);
 }
 
 searchInputBtn.addEventListener("click", filterItemsHandler);
