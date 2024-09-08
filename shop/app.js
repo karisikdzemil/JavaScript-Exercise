@@ -23,7 +23,13 @@ const filterItemsHandler = () => {
         return el;
     }
    }) 
+   if(filteredArray.length <= 0){
+    alert("Item not found, try something else!");
+   }else{
    showCards(filteredArray);
+}
+input.value = '';
+console.log(filteredArray.length);
 }
 
 searchInputBtn.addEventListener("click", filterItemsHandler);

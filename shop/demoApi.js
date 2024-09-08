@@ -61,7 +61,7 @@ const shopItems = [
 
   // Kategorija: Jakne
   {
-    name: "Kožna Jakna",
+    name: "Kozna Jakna",
     price: 7500,
     category: "Jakne",
     imageUrl: "https://media.yamahabarel.com/2021/06/Held-Sport-1.jpg",
@@ -74,7 +74,7 @@ const shopItems = [
       "https://zastitnaoprema.rs/images/stories/virtuemart/product/helly-hansen-zimska-jakna-sa-kapuljacom-mjolnir-work-novatex.jpg",
   },
   {
-    name: "Prolećna Jakna",
+    name: "Prolecna Jakna",
     price: 6000,
     category: "Jakne",
     imageUrl:
@@ -92,35 +92,35 @@ const shopItems = [
   {
     name: "Patike",
     price: 4500,
-    category: "Obuća",
+    category: "Obuca",
     imageUrl:
       "https://www.extrasports.com/files/thumbs/files/images/slike_proizvoda/media/DM0/DM0113-100/images/thumbs_800/DM0113-100_800_800px.jpg.webp",
   },
   {
-    name: "Čizme",
+    name: "Cizme",
     price: 7000,
-    category: "Obuća",
+    category: "Obuca",
     imageUrl:
       "https://bpolar.rs/wp-content/uploads/2023/09/A5YKD231_650x650.jpg",
   },
   {
     name: "Sandale",
     price: 3500,
-    category: "Obuća",
+    category: "Obuca",
     imageUrl:
       "https://obucagrazia.rs/images/upload/proizvodi/4836/51006/450_sandale-50602-boja-bela_VujOrK.JPG",
   },
   {
     name: "Papuce",
     price: 2500,
-    category: "Obuća",
+    category: "Obuca",
     imageUrl:
       "https://static.cropp.com/media/catalog/product/cache/1200/a4e40ebdc3e371adff845072e1c73f37/2/5/2555Z-80X-001-1-802984.jpg",
   },
 
   // Kategorija: Aksesoari
   {
-    name: "Kačket",
+    name: "Kacket",
     price: 1200,
     category: "Aksesoari",
     imageUrl:
@@ -134,14 +134,14 @@ const shopItems = [
       "https://merinoworld.shop/cdn/shop/products/merino-rukavice-820537_1800x1800.jpg?v=1699500100",
   },
   {
-    name: "Šal",
+    name: "Sal",
     price: 1500,
     category: "Aksesoari",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjbKFTGLKLwkGrYQ1IyCnZgKgW0qBX1hbXMw&s",
   },
   {
-    name: "Naočare za Sunce",
+    name: "Naocare za Sunce",
     price: 3000,
     category: "Aksesoari",
     imageUrl:
