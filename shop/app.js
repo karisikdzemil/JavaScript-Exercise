@@ -18,8 +18,8 @@ function showCards(renderArray = shopItems) {
   });
 }
 const filterItemsHandler = (text = input.value) => {
-//   console.log(text.textContent);
-  const searchItem = text.textContent.toUpperCase().replace(/\s+/g, "");
+  console.log(text);
+const searchItem = text.toUpperCase().replace(/\s+/g, "");
 //   console.log(searchItem);
   const filteredArray = shopItems.filter((el) => {
     if (
@@ -44,12 +44,12 @@ const dropDownHandler = (event) => {
     showCards();
     dropDown.classList.toggle("visible");
   } else {
-    filterItemsHandler(event.target);
+    filterItemsHandler(event.target.textContent);
     // console.log(filerLiDropDown)
     dropDown.classList.toggle("visible");
   }
 };
 
-searchInputBtn.addEventListener("click", filterItemsHandler);
+searchInputBtn.addEventListener("click", () => filterItemsHandler());
 dropDown.addEventListener("click", dropDownHandler);
 filerLiDropDown.addEventListener("click", () => {dropDown.classList.toggle("visible");});
