@@ -111,6 +111,11 @@ input {
     margin-top: -15px;
 }
 
-#kolica{
-font-size: 1rem;
+#dropDown{
+    width: 150px;
+    height: 250px;
+    background-color: blue;
+    position: absolute;
+    top: 70px;
+    right: 210px;
 }
