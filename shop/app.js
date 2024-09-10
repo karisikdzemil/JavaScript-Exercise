@@ -60,6 +60,10 @@ const dropDownHandler = (event) => {
 const buyHandler = () => {
     blackDrop.classList.toggle("visible");
     buyModal.classList.toggle("visible");
+    while (buyModal.firstChild != buyBtn) {
+        buyModal.removeChild(buyModal.firstChild);
+      }
+
 }
 const showBuyItemHandler = (event) => {
     if (event.target.tagName.toLowerCase() !== "ul") {
