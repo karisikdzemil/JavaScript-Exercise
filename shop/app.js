@@ -3,7 +3,10 @@ const input = document.getElementById("search-input");
 const searchInputBtn = document.getElementById("search-input-btn");
 const dropDown = document.getElementById("dropDown");
 const filerLiDropDown = document.getElementById("header-dropDown-ul").firstElementChild;
-// const filerLiDropDown = headerUl.firstElementChild;
+const buyLiModal = document.getElementById("header-dropDown-ul").lastElementChild;
+const buyBtn = document.getElementById("buy-btn");
+const blackDrop = document.querySelector(".blackDrop");
+const buyModal = document.getElementById("buy-modal");
 showCards();
 
 function showCards(renderArray = shopItems) {
@@ -17,10 +20,10 @@ function showCards(renderArray = shopItems) {
     elements.append(li);
   });
 }
+
 const filterItemsHandler = (text = input.value) => {
   console.log(text);
 const searchItem = text.toUpperCase().replace(/\s+/g, "");
-//   console.log(searchItem);
   const filteredArray = shopItems.filter((el) => {
     if (
       searchItem === el.name.toUpperCase().replace(/\s+/g, "") ||
@@ -36,8 +39,8 @@ const searchItem = text.toUpperCase().replace(/\s+/g, "");
     showCards(filteredArray);
   }
   input.value = "";
-//   console.log(filteredArray.length);
 };
+
 
 const dropDownHandler = (event) => {
   if (event.target.textContent === "Sve") {
@@ -45,11 +48,50 @@ const dropDownHandler = (event) => {
     dropDown.classList.toggle("visible");
   } else {
     filterItemsHandler(event.target.textContent);
-    // console.log(filerLiDropDown)
     dropDown.classList.toggle("visible");
   }
 };
 
+// const buyModalHandler = () => {
+//     blackDrop.classList.toggle("visible");
+//     buyModal.classList.toggle("visible");
+// }
+
+const buyHandler = () => {
+    blackDrop.classList.toggle("visible");
+    buyModal.classList.toggle("visible");
+}
+const showBuyItemHandler = (event) => {
+    if (event.target.tagName.toLowerCase() !== "ul") {
+        blackDrop.classList.toggle("visible");
+        buyModal.classList.toggle("visible");
+      const listItem = event.target.closest("li");
+      const name = listItem.children[1];
+      console.log(name);
+      const showCardEl = shopItems.find( (el) => {
+        return el.name === name.textContent;
+        })
+        console.log(showCardEl.name, showCardEl.imageUrl, showCardEl.price);
+        const imageOfEl = document.createElement('img');
+        const nameOfEl = document.createElement("h3");
+        const priceOfEl = document.createElement("p");
+        imageOfEl.className = "card-img";
+        imageOfEl.src = showCardEl.imageUrl;
+        nameOfEl.textContent = showCardEl.name;
+        priceOfEl.textContent = `Cena: ${showCardEl.price} RSD`;
+
+        
+        buyModal.prepend(priceOfEl);
+        buyModal.prepend(nameOfEl);
+        buyModal.prepend(imageOfEl);
+
+    }
+  }
+  
+
+elements.addEventListener("click", showBuyItemHandler);
+// buyLiModal.addEventListener("click", buyModalHandler);
 searchInputBtn.addEventListener("click", () => filterItemsHandler());
 dropDown.addEventListener("click", dropDownHandler);
 filerLiDropDown.addEventListener("click", () => {dropDown.classList.toggle("visible");});
+buyBtn.addEventListener("click", buyHandler);
