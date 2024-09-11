@@ -60,10 +60,10 @@ const dropDownHandler = (event) => {
 const buyHandler = () => {
     blackDrop.classList.toggle("visible");
     buyModal.classList.toggle("visible");
+
     while (buyModal.firstChild != buyBtn) {
         buyModal.removeChild(buyModal.firstChild);
       }
-
 }
 const showBuyItemHandler = (event) => {
     if (event.target.tagName.toLowerCase() !== "ul") {
@@ -75,7 +75,6 @@ const showBuyItemHandler = (event) => {
       const showCardEl = shopItems.find( (el) => {
         return el.name === name.textContent;
         })
-        console.log(showCardEl.name, showCardEl.imageUrl, showCardEl.price);
         const imageOfEl = document.createElement('img');
         const nameOfEl = document.createElement("h3");
         const priceOfEl = document.createElement("p");
@@ -87,9 +86,7 @@ const showBuyItemHandler = (event) => {
         
         buyModal.prepend(priceOfEl);
         buyModal.prepend(nameOfEl);
-        buyModal.prepend(imageOfEl);
-
-    }
+        buyModal.prepend(imageOfEl);    }
   }
   
 
