@@ -8,7 +8,8 @@ const buyBtn = document.getElementById("buy-btn");
 const blackDrop = document.querySelector(".blackDrop");
 const buyModal = document.getElementById("buy-modal");
 showCards();
-
+const buyItems = [];
+let showCardEl;
 function showCards(renderArray = shopItems) {
   renderArray.map((el) => {
     const li = document.createElement("li");
@@ -64,6 +65,7 @@ const buyHandler = () => {
     while (buyModal.firstChild != buyBtn) {
         buyModal.removeChild(buyModal.firstChild);
       }
+      buyItems.push(showCardEl);
 }
 const showBuyItemHandler = (event) => {
     if (event.target.tagName.toLowerCase() !== "ul") {
@@ -71,8 +73,7 @@ const showBuyItemHandler = (event) => {
         buyModal.classList.toggle("visible");
       const listItem = event.target.closest("li");
       const name = listItem.children[1];
-      console.log(name);
-      const showCardEl = shopItems.find( (el) => {
+       showCardEl = shopItems.find( (el) => {
         return el.name === name.textContent;
         })
         const imageOfEl = document.createElement('img');
@@ -86,7 +87,9 @@ const showBuyItemHandler = (event) => {
         
         buyModal.prepend(priceOfEl);
         buyModal.prepend(nameOfEl);
-        buyModal.prepend(imageOfEl);    }
+        buyModal.prepend(imageOfEl);   
+        return showCardEl;
+     }
   }
   
 

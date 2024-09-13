@@ -135,7 +135,7 @@ input {
     background-color:rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
-    display: none;
+    /* display: none; */
 }
 .blackDrop.visible{
     display: flex;
@@ -162,4 +162,14 @@ input {
 #buy-btn{
     width: 100px;
     /* background-color: rgb(24, 188, 24); */
+}
+#buyItems{
+    width: 50%;
+    height: 60vh;
+    position: fixed;
+    top: 22vh;
+    right: 25%;
+    background-color: white;
+    border: 2px solid rgb(128, 128, 255);
+    border-radius: 15px;
 }
