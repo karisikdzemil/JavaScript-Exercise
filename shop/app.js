@@ -99,4 +99,3 @@ searchInputBtn.addEventListener("click", () => filterItemsHandler());
 dropDown.addEventListener("click", dropDownHandler);
 filerLiDropDown.addEventListener("click", () => {dropDown.classList.toggle("visible");});
 buyBtn.addEventListener("click", buyHandler);
-console.log("radi")
