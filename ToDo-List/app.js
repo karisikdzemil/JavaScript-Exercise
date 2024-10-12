@@ -1,8 +1,6 @@
 const input = document.querySelector("input");
 const addButton = document.querySelector("#add-btn");
 const ul = document.querySelector("ul");
-// const li = document.querySelector("li");
-// const liBut = document.querySelector(".li-but");
 
 addButton.addEventListener("click", () => {
   if (input.value === "") {
@@ -13,7 +11,6 @@ addButton.addEventListener("click", () => {
     removeButton.className = "li-but";
     removeButton.textContent = "delete";
 
-    
     newLi.textContent = input.value;
     newLi.appendChild(removeButton);
     ul.appendChild(newLi);

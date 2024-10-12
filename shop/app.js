@@ -53,9 +53,22 @@ const dropDownHandler = (event) => {
   }
 };
 
-// const buyModalHandler = () => {
-//     blackDrop.classList.toggle("visible");
-//     buyModal.classList.toggle("visible");
+const buyModalHandler = () => {
+    blackDrop.classList.toggle("visible");
+    buyModal.classList.toggle("visible");
+
+    const ul = document.createElement("ul");
+    ul.id = "buy-items";
+    buyModal.prepend(ul);
+    // const ul = document.getElementById("buy-items");  
+    // console.log(ul);
+    buyItems.forEach((el)=>{
+      const item = document.createElement("li");
+      item.classList.add("buy-items-li");
+      item.innerText = `${el.name}  --  ${el.price} RSD`;
+      ul.append(item);
+    })
+    }
 // }
 
 const buyHandler = () => {
@@ -94,7 +107,7 @@ const showBuyItemHandler = (event) => {
   
 
 elements.addEventListener("click", showBuyItemHandler);
-// buyLiModal.addEventListener("click", buyModalHandler);
+buyLiModal.addEventListener("click", buyModalHandler);
 searchInputBtn.addEventListener("click", () => filterItemsHandler());
 dropDown.addEventListener("click", dropDownHandler);
 filerLiDropDown.addEventListener("click", () => {dropDown.classList.toggle("visible");});
