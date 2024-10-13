@@ -54,20 +54,40 @@ const dropDownHandler = (event) => {
 };
 
 const buyModalHandler = () => {
+  if(buyItems.length === 0){
+    alert("Your card is empty, you have to buy something...");
+    return;
+  }
     blackDrop.classList.toggle("visible");
     buyModal.classList.toggle("visible");
 
+    let priceOfEl = 0;
     const ul = document.createElement("ul");
     ul.id = "buy-items";
     buyModal.prepend(ul);
-    // const ul = document.getElementById("buy-items");  
-    // console.log(ul);
+   
     buyItems.forEach((el)=>{
       const item = document.createElement("li");
+      const span1 = document.createElement("span");
+      const span2 = document.createElement("span");
+      const but = document.createElement("button");
+      const sum = document.getElementById("sumPrice");
+
+      but.innerText = "X";
+      span1.classList.add("span-class");
+      span2.classList.add("span-class");
+      but.classList.add("buy-items-li-but");
       item.classList.add("buy-items-li");
-      item.innerText = `${el.name}  --  ${el.price} RSD`;
+      item.append(span1);
+      item.append(span2);
+      item.append(but);
+      span1.innerText = `${el.name}`;
+      span2.innerText =  `${el.price} RSD`;
       ul.append(item);
+      priceOfEl += el.price;
+      sum.innerText = `You have to pay sum of ${priceOfEl} RSD.`;
     })
+   
     }
 // }
 
