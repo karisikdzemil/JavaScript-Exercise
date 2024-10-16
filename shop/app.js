@@ -89,8 +89,8 @@ const buyModalHandler = () => {
     priceOfEl += el.price;
 
     but.addEventListener("click", () => {
-      ul.removeChild(item);  // Ukloni iz DOM-a
-      buyItems.splice(index, 1);  // Ukloni iz niza
+      ul.removeChild(item); 
+      buyItems.splice(index, 1);  
     });
   });
 
