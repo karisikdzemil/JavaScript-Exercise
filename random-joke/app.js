@@ -1,18 +1,20 @@
 const btn = document.getElementById("btn");
 const p = document.getElementById("paragraph");
+let i = 0;
 
-const randomJoke = () =>{
-    const num1 = (Math.random() * 20).toFixed(0);
-    const num2 = (Math.random() * 20).toFixed(0);
-    const findEl = jokes.find((el)=>{
-        return el.id == num1;
-    })
-    // return findEl;
-    console.log(num1, findEl)
+const randomJoke = (index) =>{
+   const joke = jokes[index];
+   return joke;
 }
 
 const joke = () =>{
-    randomJoke()
+    if(i == 19){
+        i = 0;
+    }
+    p.innerText = ''
+    const posalica =  randomJoke(i);
+    p.innerText = posalica.joke;
+    i++;
 }
 
 btn.addEventListener("click", joke);
