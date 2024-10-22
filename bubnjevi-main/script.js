@@ -58,4 +58,4 @@ drumKeys.forEach( e => {
 
 crashRide.addEventListener("transitionend", removeCrashRideTransition);
 hitHatTop.addEventListener("transitionend", removeHiHatTopTransition);
-
+console.log("radi")
