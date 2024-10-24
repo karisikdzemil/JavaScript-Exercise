@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Button Click</title>
 </head>
 <body>
-    
+
+    <button id="myButton">Klikni me</button>
+    <p id="message"></p>
+
+    <script>
+        const button = document.getElementById("myButton");
+        const message = document.getElementById("message");
+
+        button.addEventListener("click", () => {
+            message.innerText = "Hvala što si kliknuo dugme!";
+        });
+    </script>
+
 </body>
 </html>
