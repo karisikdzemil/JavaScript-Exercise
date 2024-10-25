@@ -49,3 +49,43 @@ const displayNone = () =>{
     })
 }
 
+// Portfolio
+
+const portfolioSort = (button) => {
+    let category = button.getAttribute("data-category");
+    let portfolioItems = document.querySelectorAll(".portfolio-single-item");
+
+    portfolioItems.forEach((item)=>{
+        item.style.display = "none";
+    })
+
+    if(category === "sve"){
+        portfolioItems.forEach((item)=>{
+            item.style.display = "block";
+        })
+    }
+
+    portfolioItems.forEach((item) => {
+        if(item.getAttribute("data-category").includes(category)){
+            item.style.display = "block";
+        }
+    })
+}
+
+// Otvaramo modala
+
+const openModal = () => {
+    const modalWindow = document.querySelector(".popup-modal");
+    const overlay = document.querySelector(".overlay");
+    modalWindow.style.display = "block";
+    overlay.style.display = "block";
+}
+
+// Zatvaramo modal
+
+const closeModal = () => {
+    const modalWindow = document.querySelector(".popup-modal");
+    const overlay = document.querySelector(".overlay");
+    modalWindow.style.display = "none";
+    overlay.style.display = "none";
+}
