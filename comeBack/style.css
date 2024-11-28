@@ -77,10 +77,18 @@ li{
     padding-top: 5px;
     padding-left: 10px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
 .li-btn{
-    width: 15%;
+    width: 10%;
     height: 4vh;
     float: inline-end;
+    background-color: red;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: white;
 }
