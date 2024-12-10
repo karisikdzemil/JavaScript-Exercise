@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.main{
+width: 100%;
+height: 100vh;
+background-color: rgb(91, 91, 242);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+.ToDo{
+    width: 50%;
+    min-height: 70vh;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+.value{
+    width: 100%;
+    height: 15vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+input{
+    width: 70%;
+    height: 7vh;
+    background-color: white;
+    border: 3px solid rgb(91, 91, 242);
+    border-radius: 10px;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+#add-btn{
+    width: 15%;
+    height: 7vh;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(91, 91, 242);
+}
+
+ul{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+li{
+    width: 90%;
+    height: 5vh;
+    background-color: rgb(111, 180, 217);
+    list-style: none;
+    margin-top: 5px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    border: 2px solid rgb(91, 91, 242);
+    border-radius: 10px;
+}
+.li-but{
+    width: 15%;
+    height: 3.5vh;
+    background-color: rgb(122, 111, 217);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3ms ease;
+}
+
+h1{
+    font-size: 3rem;
+    padding: 1rem;
+    color: rgb(111, 180, 217);
+}
