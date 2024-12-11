@@ -64,4 +64,9 @@ const quiz = [
       cAnswer: "H2O",
       wAnswers: ["CO2", "H2O", "NaCl", "O2"],
     },
+    {
+        question: "What is the chemical formula for water?",
+        cAnswer: "H2O",
+        wAnswers: ["CO2", "H2O", "NaCl", "O2"],
+    }
   ];
