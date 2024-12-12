@@ -5,6 +5,9 @@ const ul = document.querySelector("ul");
 const counted = document.querySelector("h3");
 const blackDrop = document.querySelector(".black-drop");
 const modal = document.querySelector('.modal');
+const modalP = document.querySelector("#start-modal-p");
+const modalB = document.getElementById("start-modal-but");
+
 let answered = false;
 let count = 0;
 let correctAnswers = 0
@@ -16,20 +19,27 @@ class Quiz{
         this.init()
     }
     init(){
+        answered = true;
         this.show((Math.random() * 10).toFixed(0));
         next.addEventListener("click", () => proba.show((Math.random() * 10).toFixed(0)));
         ul.addEventListener("click", e => {this.checkQuestion(e)});
+        modalB.addEventListener("click", this.restart);
+
     }
 
     show(randomNumber){
-        answered = false;
-        answers.forEach(el => el.className = 'li')
-        question.innerText = this.arr[randomNumber].question;
-        this.arr[randomNumber].wAnswers.forEach((el, i) => {
-            answers[i].innerText = el;
-        });
-        count++;
-        this.gameOverCounter();
+        if(answered === false){
+            alert("You need to give answer!");
+        }else{
+            answered = false;
+            answers.forEach(el => el.className = 'li')
+            question.innerText = this.arr[randomNumber].question;
+            this.arr[randomNumber].wAnswers.forEach((el, i) => {
+                answers[i].innerText = el;
+            });
+            count++;
+            this.gameOverCounter();
+        }
     }
 
     checkQuestion(e){
@@ -50,12 +60,20 @@ class Quiz{
     }
 
     gameOverCounter(){
-        counted.innerText = `${count} of 4`;
         if(count > 4){
+            count = 1;
             blackDrop.classList.add("visible");
             modal.classList.add("visible");
-            count = 0;
-        }
+            modalP.innerText = `You had ${correctAnswers} correct answers out of 4!`
+                }
+        counted.innerText = `${count} of 4`;
+
+    }
+    restart(){
+        correctAnswers = 0;
+        blackDrop.classList.toggle("visible");
+        modal.classList.toggle("visible");
+
     }
     
 }
