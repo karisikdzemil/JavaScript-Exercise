@@ -97,7 +97,7 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
-    display: block;
+    display: none;
   }
   .modal {
     width: 50%;
@@ -106,7 +106,7 @@
     border-radius: 10px;
     position: absolute;
     border: 2px solid black;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -143,7 +143,7 @@
     display: none;
   }
   .visible {
-    display: block;
+    display: flex;
   }
   #game-over-modal {
     display: none; 
