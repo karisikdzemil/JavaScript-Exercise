@@ -42,6 +42,8 @@ class Quiz{
         }
     }
 
+
+    
     checkQuestion(e){
         if(e.target.tagName !== "UL" && answered === false){
             const targetEl = this.arr.find((el)=>{
