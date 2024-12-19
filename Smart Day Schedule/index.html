@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pametni Dnevni Raspored</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pametni Dnevni Raspored</h1>
+    </header>
+    <main class="main">
+        <section class="task-form">
+            <h2>Dodaj Novi Zadatak</h2>
+            <form id="taskForm">
+                <label for="taskTitle">Naslov:</label>
+                <input type="text" id="taskTitle" name="taskTitle" placeholder="Unesite naslov zadatka" required>
+
+                <label for="taskDescription">Opis:</label>
+                <textarea id="taskDescription" name="taskDescription" placeholder="Dodajte opis zadatka"></textarea>
+
+                <label for="taskTime">Vreme:</label>
+                <input type="datetime-local" id="taskTime" name="taskTime" required>
+
+                <label for="taskPriority">Prioritet:</label>
+                <select id="taskPriority" name="taskPriority">
+                    <option value="low">Nizak</option>
+                    <option value="medium">Srednji</option>
+                    <option value="high">Visok</option>
+                </select>
+
+                <button type="submit" class="btn">Dodaj Zadatak</button>
+            </form>
+        </section>
+        
+        <section class="task-list">
+            <h2>Lista Zadataka</h2>
+            <div id="taskContainer"></div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Pametni Dnevni Raspored. Sva prava zadržana.</p>
+    </footer>
+</body>
+</html>

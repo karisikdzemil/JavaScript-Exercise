@@ -1,0 +1,129 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 0 20px; /* Added padding to the sides */
+}
+
+header {
+    background-color: #6200ea; /* Primary purple color */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px; /* Added padding for main content */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #03dac6; /* Teal accent */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #000;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffeb3b; /* Yellow accent */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task .task-info {
+    max-width: 70%;
+}
+
+.task .task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.add-task {
+    background-color: #03dac6; /* Teal accent */
+    color: #fff;
+}
+
+button.add-task:hover {
+    background-color: #6200ea; /* Purple hover */
+    color: #fff;
+}
+
+button.edit-task {
+    background-color: #ff5722; /* Orange for edit */
+    color: #fff;
+}
+
+button.edit-task:hover {
+    background-color: #e64a19;
+}
+
+button.delete-task {
+    background-color: #d32f2f; /* Red for delete */
+    color: #fff;
+}
+
+button.delete-task:hover {
+    background-color: #b71c1c;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Aligning taskDescription with other inputs */
+input, textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+}
