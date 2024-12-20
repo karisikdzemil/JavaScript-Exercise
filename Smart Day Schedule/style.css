@@ -4,9 +4,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f9f9f9;
+    background-color: #f1f8ff; /* Light blue background */
     color: #333;
-    padding: 0 20px; /* Added padding to the sides */
+    padding: 0 20px;
 }
 
 header {
@@ -53,7 +53,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffeb3b; /* Yellow accent */
+    background-color: #e3f2fd; /* Light blue accent */
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
@@ -126,4 +126,48 @@ input, textarea {
 
 textarea {
     resize: none;
+}
+ul{
+    width: 90%;
+    min-height: 5vh;
+    /* background-color: red; */
+    list-style: none;
+}
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 0 10px; /* Opcionalno, razmak unutar liste */
+    border: 1px solid #ccc; /* Za bolju vidljivost */
+    margin-bottom: 10px; /* Razmak između elemenata liste */
+    border-radius: 5px;
+    background-color: #f4eafc;
+}
+
+li h2, li h3, li p, li button {
+    margin: 0; /* Uklanja nepotreban razmak */
+    padding: 0; /* Uklanja nepotreban razmak */
+}
+
+li h2, li h3 {
+    font-size: 1rem; /* Prilagođavanje veličine fonta */
+}
+
+li p {
+    font-size: 0.9rem; /* Veličina fonta za paragraf */
+}
+
+li button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+li button:hover {
+    background-color: #0056b3;
 }
