@@ -57,6 +57,14 @@ form div button{
     font-size: 18px;
 }
 
+form ul{
+    list-style: none;
+}
+
+form ul li{
+    color: red;
+}
+
 .no-acc-register{
     text-align: center;
     padding: 50px;
