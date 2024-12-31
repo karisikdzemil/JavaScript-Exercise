@@ -11,6 +11,9 @@
     <script src="./app.js" defer></script>
 </head>
 <body>
+    <template>
+        <li>Tell me something <button>X</button></li>
+    </template>
     <header>
         <h1>All-in-One Dashboard</h1>
         <nav>
@@ -45,6 +48,10 @@
             <h2>Quote of the Day</h2>
             <div id="quotes-container">
                 <p>Loading quote...</p>
+                <div class="quoteStyle">
+                    <button id="quote-btn">Next quote</button>
+                    <h3>Author</h3>
+                </div>
             </div>
         </section>
 
@@ -57,7 +64,7 @@
                 <button type="submit">Add Note</button>
             </form>
             <ul id="notes-list">
-                <!-- User-added notes will appear here -->
+              
             </ul>
         </section>
     </main>
