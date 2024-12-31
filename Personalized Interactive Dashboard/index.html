@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./assets/weather.js" defer></script>
+    <script src="./assets/quotes.js" defer></script>
+    <script src="./assets/news.js" defer></script>
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>All-in-One Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#quotes">Quotes</a></li>
+                <li><a href="#notes">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Weather Section -->
+        <section id="weather">
+            <h2>Weather Forecast</h2>
+            <div id="weather-container">
+                <p>Loading weather data...</p>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news">
+            <h2>Latest News</h2>
+            <div id="news-container">
+                <p>Loading news...</p>
+            </div>
+        </section>
+
+        <!-- Quotes Section -->
+        <section id="quotes">
+            <h2>Quote of the Day</h2>
+            <div id="quotes-container">
+                <p>Loading quote...</p>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <section id="notes">
+            <h2>Personal Notes</h2>
+            <form id="notes-form">
+                <label for="note">Add a Note:</label>
+                <textarea id="note" rows="3" placeholder="Write your note here..."></textarea>
+                <button type="submit">Add Note</button>
+            </form>
+            <ul id="notes-list">
+                <!-- User-added notes will appear here -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All-in-One Dashboard</p>
+    </footer>
+</body>
+</html>
