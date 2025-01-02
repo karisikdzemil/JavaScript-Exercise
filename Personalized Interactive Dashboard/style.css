@@ -176,17 +176,42 @@ header, footer {
   background: #0288d1;
 }
 
-li{
+.notes-li{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-li button{
+.notes-li button{
     width: 25px;
     height: 25px;
     background-color: red;
     color: white;
     border: 0;
     border-radius: 5px;
+}
+
+#news{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.newsLi{
+    width: 30%;
+    height: 60vh;
+    /* background-color: red; */
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+.newsLi-heading{
+    font-size: 18px;
+}
+
+.newsLi-p{
+    font-size: 14px;
 }

@@ -1,5 +1,5 @@
 const quote = document.querySelector("#quotes-container p");
-const author = document.querySelector("h3");
+const author = document.querySelector("#h3");
 const quoteBtn = document.getElementById("quote-btn");
 
 const quoteUrl = "https://go-quote.azurewebsites.net/random-quote?format=json";
@@ -16,11 +16,11 @@ async function getQuote() {
       const data = await response.json();
       quote.textContent = data.text;
       author.textContent = data.author;
-      console.log(data)
+      // console.log(data)
     } catch (error) {
       console.error("Error fetching the quote:", error);
     }
   }
   
 
-quoteBtn.addEventListener("click", getQuote)
+quoteBtn.addEventListener("click", getQuote);

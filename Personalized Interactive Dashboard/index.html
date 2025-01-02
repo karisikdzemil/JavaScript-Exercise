@@ -18,7 +18,7 @@
         <h1>All-in-One Dashboard</h1>
         <nav>
             <ul>
-                <li><a href="#weather">Weather</a></li>
+                <!-- <li><a href="#weather">Weather</a></li> -->
                 <li><a href="#news">News</a></li>
                 <li><a href="#quotes">Quotes</a></li>
                 <li><a href="#notes">Notes</a></li>
@@ -28,18 +28,34 @@
 
     <main>
         <!-- Weather Section -->
-        <section id="weather">
+        <!-- <section id="weather">
             <h2>Weather Forecast</h2>
             <div id="weather-container">
                 <p>Loading weather data...</p>
             </div>
-        </section>
+        </section> -->
 
         <!-- News Section -->
-        <section id="news">
+        <section id="newsSection">
             <h2>Latest News</h2>
             <div id="news-container">
-                <p>Loading news...</p>
+                <ul id="news">
+                    <li class="newsLi">
+                        <h1 class="newsLi-heading">Title</h1>
+                        <p class="newsLi-p">Lorem ipsum dolor sit amet.</p>
+                        <h3><a href="">Read More</a></h3>
+                    </li>
+                    <li class="newsLi"> 
+                        <h1 class="newsLi-heading">Title</h1>
+                        <p class="newsLi-p">Lorem ipsum dolor sit amet.</p>
+                        <h3><a href="">Read More</a></h3>
+                    </li>
+                    <li class="newsLi">
+                        <h1 class="newsLi-heading">Title</h1>
+                        <p class="newsLi-p">Lorem ipsum dolor sit amet.</p>
+                        <h3><a href="">Read More</a></h3>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -50,7 +66,7 @@
                 <p>Loading quote...</p>
                 <div class="quoteStyle">
                     <button id="quote-btn">Next quote</button>
-                    <h3>Author</h3>
+                    <h3 id="h3">Author</h3>
                 </div>
             </div>
         </section>

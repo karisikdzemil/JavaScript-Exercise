@@ -12,6 +12,7 @@ noteBtn.addEventListener('click', (event) => {
     }
     const li = document.createElement("li");
     const button = document.createElement("button");
+    li.classList.add("notes-li");
     button.textContent = "X";
     li.textContent = note.value;
     li.append(button);
