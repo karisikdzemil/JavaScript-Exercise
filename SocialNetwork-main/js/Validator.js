@@ -26,7 +26,6 @@ class Validator {
 
 	validate(e) {
 		let elFields = this.elementsConfig;
-
 		let field = e.target;
 		let fieldName = field.getAttribute('name');
 		let fieldValue = field.value;
