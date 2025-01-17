@@ -19,8 +19,32 @@ class User{
             },
             body: data
         }).then(response => response.json())
-        .then(data => 
+        .then(data => {
+            let session = new Session();
+            session.user_id = data.id;
+            session.startSession();
             window.location.href = "hexa.html"
-        );
+        });
+    }
+
+    login(){
+        fetch(this.api_url + "/users")
+        .then(response => response.json())
+        .then(data => {
+            let login_successful = 0;
+            data.forEach(db_user => {
+                if(db_user.email === this.email && db_user.password === this.password){
+
+                    let session = new Session();
+                    session.user_id = db_user.id;
+                    session.startSession();
+                    login_successful = 1;
+                    window.location.href = "hexa.html";
+                }
+            });
+            if(login_successful === 0){
+                alert("pogresan email ili lozinka!!");
+            }
+        })
     }
 }
