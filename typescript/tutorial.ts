@@ -38,6 +38,30 @@
 //     console.log(User.age);
 // }
 
-const printID = (id) => {
-    console.log("ID: " +  id)
-}
+// Unions and intersections:
+
+// type IDFieldType = string | number;
+
+// const printID = (id: IDFieldType) => {
+//     console.log("ID: " +  id);
+// }
+
+// printID(12345678);
+
+// interface BusinessPartner {
+//     name: string,
+//     cerditScore: number,
+// }
+
+// interface UserIdentity {
+//     id: number,
+//     email: string,
+// }
+
+// type Employee = BusinessPartner & UserIdentity;
+
+// const signContract = (employee: Employee) => {
+//     console.log("Contract signed by: " + employee.name + " with email " + employee.email);
+// }
+
+// signContract({name: "Pedro", cerditScore: 800, id: 34, email: "pedro@gmail.com"})

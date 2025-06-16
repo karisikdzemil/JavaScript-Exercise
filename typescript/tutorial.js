@@ -2,16 +2,7 @@
 // let id: number = 5;
 // let company: string = "Acme Corp";
 // let isPublished: boolean = true;
-const User = {
-    id: 2,
-    name: "Pedro",
-    greet(message) {
-        console.log(message);
-    }
+const signContract = (employee) => {
+    console.log("Contract signed by: " + employee.name + "with email" + employee.email);
 };
-User.greet("Hello");
-// if(!User.age){
-//     console.log("No age Of the User!");
-// }else{
-//     console.log(User.age);
-// }
+signContract({ name: "Pedro", cerditScore: 800, id: 34, email: "pedro@gmail.com" });
