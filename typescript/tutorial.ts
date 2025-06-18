@@ -65,3 +65,25 @@
 // }
 
 // signContract({name: "Pedro", cerditScore: 800, id: 34, email: "pedro@gmail.com"})
+
+// Enums 
+
+enum LoginError {
+    Unauthorized = "unauthorized",
+    Nouser = "nouser",
+    WrongCredentials = "wrongcredentials",
+    Internal = "internal"
+}
+
+const printErrorMsg = (error: LoginError) => {
+    if(error === LoginError.Unauthorized){
+        console.log("User not authorized");
+    }  else if(error === LoginError.Nouser){
+        console.log("No user was found with that username.");
+    }else if(error === LoginError.WrongCredentials){
+        console.log("Wrong username/password combination");
+    }else{
+        console.log("Internal error");
+    }
+}
+printErrorMsg(LoginError.WrongCredentials);
