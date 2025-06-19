@@ -68,22 +68,50 @@
 
 // Enums 
 
-enum LoginError {
-    Unauthorized = "unauthorized",
-    Nouser = "nouser",
-    WrongCredentials = "wrongcredentials",
-    Internal = "internal"
-}
+// enum LoginError {
+//     Unauthorized = "unauthorized",
+//     Nouser = "nouser",
+//     WrongCredentials = "wrongcredentials",
+//     Internal = "internal"
+// }
 
-const printErrorMsg = (error: LoginError) => {
-    if(error === LoginError.Unauthorized){
-        console.log("User not authorized");
-    }  else if(error === LoginError.Nouser){
-        console.log("No user was found with that username.");
-    }else if(error === LoginError.WrongCredentials){
-        console.log("Wrong username/password combination");
-    }else{
-        console.log("Internal error");
+// const printErrorMsg = (error: LoginError) => {
+//     if(error === LoginError.Unauthorized){
+//         console.log("User not authorized");
+//     }  else if(error === LoginError.Nouser){
+//         console.log("No user was found with that username.");
+//     }else if(error === LoginError.WrongCredentials){
+//         console.log("Wrong username/password combination");
+//     }else{
+//         console.log("Internal error");
+//     }
+// }
+// printErrorMsg(LoginError.WrongCredentials);
+
+// Generics
+
+class StorageContainer<T> {
+    private contents: T[];
+
+    constructor(){
+        this.contents = [];
+    }
+
+    addItem(item: T): void{
+        this.contents.push(item);
+    }
+
+    getItem(idx: number): T | undefined{
+        return this.contents[idx];
     }
 }
-printErrorMsg(LoginError.WrongCredentials);
+
+const usernames = new StorageContainer<string>();
+usernames.addItem("pedrotech");
+usernames.addItem("echobr");
+console.log(usernames.getItem(0));
+
+const friendsCount = new StorageContainer<number>();
+friendsCount.addItem(23);
+friendsCount.addItem(678);
+console.log(friendsCount.getItem(0));

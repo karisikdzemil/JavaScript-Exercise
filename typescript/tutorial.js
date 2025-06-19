@@ -50,25 +50,41 @@
 // }
 // signContract({name: "Pedro", cerditScore: 800, id: 34, email: "pedro@gmail.com"})
 // Enums 
-var LoginError;
-(function (LoginError) {
-    LoginError["Unauthorized"] = "unauthorized";
-    LoginError["Nouser"] = "nouser";
-    LoginError["WrongCredentials"] = "wrongcredentials";
-    LoginError["Internal"] = "internal";
-})(LoginError || (LoginError = {}));
-const printErrorMsg = (error) => {
-    if (error === LoginError.Unauthorized) {
-        console.log("User not authorized");
+// enum LoginError {
+//     Unauthorized = "unauthorized",
+//     Nouser = "nouser",
+//     WrongCredentials = "wrongcredentials",
+//     Internal = "internal"
+// }
+// const printErrorMsg = (error: LoginError) => {
+//     if(error === LoginError.Unauthorized){
+//         console.log("User not authorized");
+//     }  else if(error === LoginError.Nouser){
+//         console.log("No user was found with that username.");
+//     }else if(error === LoginError.WrongCredentials){
+//         console.log("Wrong username/password combination");
+//     }else{
+//         console.log("Internal error");
+//     }
+// }
+// printErrorMsg(LoginError.WrongCredentials);
+// Generics
+class StorageContainer {
+    constructor() {
+        this.contents = [];
     }
-    else if (error === LoginError.Nouser) {
-        console.log("No user was found with that username.");
+    addItem(item) {
+        this.contents.push(item);
     }
-    else if (error === LoginError.WrongCredentials) {
-        console.log("Wrong username/password combination");
+    getItem(idx) {
+        return this.contents[idx];
     }
-    else {
-        console.log("Internal error");
-    }
-};
-printErrorMsg(LoginError.WrongCredentials);
+}
+const usernames = new StorageContainer();
+usernames.addItem("pedrotech");
+usernames.addItem("echobr");
+console.log(usernames.getItem(0));
+const friendsCount = new StorageContainer();
+friendsCount.addItem(23);
+friendsCount.addItem(678);
+console.log(friendsCount.getItem(0));
